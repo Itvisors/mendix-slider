@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="itvisors.slider.Slider" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Slider</name>
+    <description>A Slider </description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <property key="sampleText" type="string" required="false">
+                <caption>Default value</caption>
+                <description>Sample text input</description>
+            </property>
+
+            <property key = "isContinuous" type = "boolean" defaultValue="true">
+                <caption>is continuos slider</caption>
+                <description>boolean to set slider to continuous or discrete</description>
+            </property>   
+
+
+            <property key = "startNumber" type = "integer" defaultValue="0" required = 'true'>
+                <caption>Start number</caption>
+                <description>integer to set the start of the slider </description>
+            </property>   
+            
+            
+            <property key = "endNumber" type = "integer" defaultValue="100" required = 'true'> 
+                <caption>End number</caption>
+                <description>integer to set the end of the slider </description>
+            </property> 
+            
+              
+            
+ <!--            <property key="markList" type="object" isList="true" required="false">
+                <caption>Marks</caption>
+                <description/>
+                <properties>
+                    <propertyGroup caption="Mark info">
+                        <property key="markPoint" type="integer" required="true" defaultValue="0">
+                            <caption>Mark point</caption>
+                            <description>Point where the mark will be set</description>
+                        </property>
+                        <property key="markString" type="string" required="true">
+                            <caption>Mark string</caption>
+                            <description>Text to be displayed at mark</description>
+                        </property>
+                    </propertyGroup>
+                </properties>
+            </property> -->
+
+        </propertyGroup>
+    </properties>
+</widget>

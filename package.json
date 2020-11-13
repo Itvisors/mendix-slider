@@ -1,0 +1,31 @@
+{
+  "name": "slider",
+  "widgetName": "Slider",
+  "version": "1.0.0",
+  "description": "A Slider ",
+  "copyright": "ITVisors (2020)",
+  "author": "Paul Janssen",
+  "config": {
+    "projectPath": "./test//",
+    "mendixHost": "http://localhost:8080",
+    "developmentPort": "3000"
+  },
+  "packagePath": "itvisors",
+  "scripts": {
+    "start": "pluggable-widgets-tools start:server --open",
+    "dev": "pluggable-widgets-tools start:web",
+    "build": "pluggable-widgets-tools build:web",
+    "lint": "pluggable-widgets-tools lint",
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:web"
+  },
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "@mendix/pluggable-widgets-tools": "^8.14.0"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "classnames": "^2.2.6"
+  }
+}
