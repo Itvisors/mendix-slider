@@ -16,21 +16,54 @@
             <property key = "isContinuous" type = "boolean" defaultValue="true">
                 <caption>is continuos slider</caption>
                 <description>boolean to set slider to continuous or discrete</description>
-            </property>   
+            </property>     
 
+            <property key="stepNr" type="expression" required = "true" defaultValue="1">
+                <caption>Step number</caption>
+                <description>Indicates the interval between steps</description>
+                <returnType type="Decimal" />
+            </property>
 
-            <property key = "startNumber" type = "integer" defaultValue="0" required = 'true'>
+            <property key = "min" type = "expression" defaultValue="0" required = 'true'>
                 <caption>Start number</caption>
                 <description>integer to set the start of the slider </description>
+                <returnType type="Decimal" />
             </property>   
             
-            
-            <property key = "endNumber" type = "integer" defaultValue="100" required = 'true'> 
+            <property key = "max" type = "expression" defaultValue="100" required = 'true'> 
                 <caption>End number</caption>
                 <description>integer to set the end of the slider </description>
+                <returnType type="Decimal" />
             </property> 
-            
-              
+        </propertyGroup>
+             
+        <propertyGroup caption="Data source">
+            <property key="valueAttribute" type="attribute">
+                <caption>Attribute (path)</caption>
+                <description>The attribute where the value should be stored</description>
+                <attributeTypes>
+                    <attributeType name="Integer"/>
+                    <attributeType name="Decimal"/>
+                </attributeTypes>
+            </property>
+
+            <property key="secondValueAttribute" type="attribute" required = "false">
+                <caption>Second Attribute (path)</caption>
+                <description>The second attribute where the value should be stored in case of a double slider</description>
+                <attributeTypes>
+                    <attributeType name="Integer"/>
+                    <attributeType name ="Decimal"/>
+                </attributeTypes>
+            </property>
+
+            <property key="onChangeAction" type="action" required="false">
+	            <caption>On change</caption>
+	            <description>Action to be performed when slider is adjusted</description>
+            </property>                         
+        </propertyGroup>
+    </properties>
+</widget>
+
             
  <!--            <property key="markList" type="object" isList="true" required="false">
                 <caption>Marks</caption>
@@ -48,7 +81,3 @@
                     </propertyGroup>
                 </properties>
             </property> -->
-
-        </propertyGroup>
-    </properties>
-</widget>
