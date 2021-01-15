@@ -28,6 +28,32 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
+	public static myfirstmodule.proxies.Slider dS_CreateTestObject_Disabled(IContext context)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			IMendixObject result = (IMendixObject)Core.execute(context, "MyFirstModule.DS_CreateTestObject_Disabled", params);
+			return result == null ? null : myfirstmodule.proxies.Slider.initialize(context, result);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static myfirstmodule.proxies.Slider dS_CreateTestObject_NotDisabled(IContext context)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			IMendixObject result = (IMendixObject)Core.execute(context, "MyFirstModule.DS_CreateTestObject_NotDisabled", params);
+			return result == null ? null : myfirstmodule.proxies.Slider.initialize(context, result);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
 	public static void och_Test(IContext context, myfirstmodule.proxies.Slider _slider)
 	{
 		try

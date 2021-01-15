@@ -23,7 +23,8 @@ public class Slider
 		CurrentValue("CurrentValue"),
 		SecondValue("SecondValue"),
 		CurrentValueDecimal("CurrentValueDecimal"),
-		MaxDecimal("MaxDecimal");
+		MaxDecimal("MaxDecimal"),
+		IsDisabled("IsDisabled");
 
 		private java.lang.String metaName;
 
@@ -260,6 +261,42 @@ public class Slider
 	public final void setMaxDecimal(com.mendix.systemwideinterfaces.core.IContext context, java.math.BigDecimal maxdecimal)
 	{
 		getMendixObject().setValue(context, MemberNames.MaxDecimal.toString(), maxdecimal);
+	}
+
+	/**
+	 * @return value of IsDisabled
+	 */
+	public final java.lang.Boolean getIsDisabled()
+	{
+		return getIsDisabled(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of IsDisabled
+	 */
+	public final java.lang.Boolean getIsDisabled(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.IsDisabled.toString());
+	}
+
+	/**
+	 * Set value of IsDisabled
+	 * @param isdisabled
+	 */
+	public final void setIsDisabled(java.lang.Boolean isdisabled)
+	{
+		setIsDisabled(getContext(), isdisabled);
+	}
+
+	/**
+	 * Set value of IsDisabled
+	 * @param context
+	 * @param isdisabled
+	 */
+	public final void setIsDisabled(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean isdisabled)
+	{
+		getMendixObject().setValue(context, MemberNames.IsDisabled.toString(), isdisabled);
 	}
 
 	/**

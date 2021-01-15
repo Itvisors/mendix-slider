@@ -13,11 +13,6 @@
                 <description>Sample text input</description>
             </property>
 
-            <property key = "isContinuous" type = "boolean" defaultValue="true">
-                <caption>is continuos slider</caption>
-                <description>boolean to set slider to continuous or discrete</description>
-            </property>     
-
             <property key="stepNr" type="expression" required = "true" defaultValue="1">
                 <caption>Step number</caption>
                 <description>Indicates the interval between steps</description>
@@ -26,15 +21,29 @@
 
             <property key = "min" type = "expression" defaultValue="0" required = 'true'>
                 <caption>Start number</caption>
-                <description>integer to set the start of the slider </description>
+                <description>Integer to set the start of the slider </description>
                 <returnType type="Decimal" />
             </property>   
             
             <property key = "max" type = "expression" defaultValue="100" required = 'true'> 
                 <caption>End number</caption>
-                <description>integer to set the end of the slider </description>
+                <description>Integer to set the end of the slider </description>
                 <returnType type="Decimal" />
             </property> 
+
+            <property key = "isVertical" type = "boolean" defaultValue="false" required = "true"> 
+                <caption>Is vertical slider</caption>
+                <description>Boolean to determine if the slider is vertical or horizontal alligned </description>
+            </property> 
+
+            <property key = "isDisabled" type = "attribute" required = "false"> 
+                <caption>IsDisabled boolean (path)</caption>
+                <description>A boolean that determines wether the slider is active or not</description>
+                    <attributeTypes>
+                        <attributeType name="Boolean"/>
+                    </attributeTypes>
+            </property> 
+            
         </propertyGroup>
              
         <propertyGroup caption="Data source">

@@ -1,8 +1,7 @@
 import { Component, createElement } from "react";
-
-import SliderWidget from "@material-ui/core/Slider";
-
 import Big from "big.js";
+import SliderWidget from "@material-ui/core/Slider";
+import "./ui/Slider.css";
 
 export default class Slider extends Component {
     constructor(props) {
@@ -86,26 +85,38 @@ export default class Slider extends Component {
             });
  */
 
+        let disabled;
+
+        let orientation;
+
         if (this.state.value === undefined) {
             return "Foutje...... Volgende keer beter";
         }
 
-        let step;
-
-        if (!this.props.isContinuous) {
-            step = Number(this.props.stepNr.value);
+        if (this.props.isDisabled === undefined) {
+            disabled = false;
+        } else {
+            disabled = this.props.isDisabled.value;
         }
+
+        if (this.props.isVertical) {
+            orientation = "vertical";
+        } else {
+            orientation = "horizontal";
+        }
+
         return (
             <SliderWidget
+                step={Number(this.props.stepNr.value)}
+                disabled={disabled}
                 value={this.state.value}
-                // eslint-disable-next-line prettier/prettier
                 onChange={this.onInputChange}
                 onChangeCommitted={this.onCommitChange}
                 getAriaValueText={this.valuetext}
                 valueLabelDisplay="auto"
                 min={Number(this.props.min.value)}
                 max={Number(this.props.max.value)}
-                step={step}
+                orientation={orientation}
             />
         );
     }
