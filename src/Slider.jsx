@@ -14,15 +14,18 @@ export default class Slider extends Component {
         this.onInputChange = this.handleChange.bind(this);
         this.onCommitChange = this.handleChangeCommited.bind(this);
     }
-    valuetext(value) {
-        return value;
-    }
 
     handleChange = (event, newValue) => {
         this.setState({ value: newValue });
     };
 
+    /**
+     * This function gets called when a slider is released and sets the value attributes and handles the onchange action.
+     * @param {*} event event source of the callback
+     * @param {*} newValue the new value. In case of a range slider, an array is returned. Else a single decimal value is returned.
+     */
     handleChangeCommited = (event, newValue) => {
+        // Check if no range slider
         if (!this.props.secondValueAttribute) {
             this.props.valueAttribute.setValue(Big(newValue));
         } else {
@@ -51,13 +54,14 @@ export default class Slider extends Component {
             Number(this.props.max.value),
             Number(this.props.valueAttribute.value)
         );
+        //Check if no range slider
         if (!this.props.secondValueAttribute) {
             if (prevProps.valueAttribute !== this.props.valueAttribute) {
                 this.setState({ value: newValue });
             }
         } else {
             if (
-                prevProps.valueAttribute !== this.props.valueAttribute &&
+                prevProps.valueAttribute !== this.props.valueAttribute ||
                 prevProps.secondValueAttribute !== this.props.secondValueAttribute
             ) {
                 const secondValue = this.convertValue(
@@ -74,29 +78,26 @@ export default class Slider extends Component {
     }
 
     render() {
-        //marks moeten op een value komen value = markpoint
-        // marks krijgen een text = markstring
-        //vullen met marks in de frontend. Hoe
-
-        /*         const markList = this.props.markList.map(markItem =>
-            {
-                const mark = {value:markItem.markPoint, label: markItem.markSrting}
-                return mark;
-            });
- */
-
-        let disabled;
-
         let orientation;
 
-        if (this.state.value === undefined) {
-            return "Foutje...... Volgende keer beter";
+        let valueLabelDisplayVar;
+
+        switch (this.props.valueLabelDisplayType) {
+            case "on":
+                valueLabelDisplayVar = "on";
+                break;
+            case "off":
+                valueLabelDisplayVar = "off";
+                break;
+            case "auto":
+                valueLabelDisplayVar = "auto";
+                break;
+            default:
+                valueLabelDisplayVar = "auto";
         }
 
-        if (this.props.isDisabled === undefined) {
-            disabled = false;
-        } else {
-            disabled = this.props.isDisabled.value;
+        if (this.state.value === undefined) {
+            return "lallaala";
         }
 
         if (this.props.isVertical) {
@@ -108,15 +109,14 @@ export default class Slider extends Component {
         return (
             <SliderWidget
                 step={Number(this.props.stepNr.value)}
-                disabled={disabled}
                 value={this.state.value}
                 onChange={this.onInputChange}
                 onChangeCommitted={this.onCommitChange}
-                getAriaValueText={this.valuetext}
-                valueLabelDisplay="auto"
+                valueLabelDisplay={valueLabelDisplayVar}
                 min={Number(this.props.min.value)}
                 max={Number(this.props.max.value)}
                 orientation={orientation}
+                disabled={this.props.Editability}
             />
         );
     }
