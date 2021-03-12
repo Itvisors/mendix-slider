@@ -116,7 +116,7 @@ export default class Slider extends Component {
                 min={Number(this.props.min.value)}
                 max={Number(this.props.max.value)}
                 orientation={orientation}
-                disabled={this.props.Editability}
+                disabled={this.props.valueAttribute.readOnly}
             />
         );
     }
