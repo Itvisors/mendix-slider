@@ -72,21 +72,3 @@
         </propertyGroup>
     </properties>
 </widget>
-
-            
- <!--            <property key="markList" type="object" isList="true" required="false">
-                <caption>Marks</caption>
-                <description/>
-                <properties>
-                    <propertyGroup caption="Mark info">
-                        <property key="markPoint" type="integer" required="true" defaultValue="0">
-                            <caption>Mark point</caption>
-                            <description>Point where the mark will be set</description>
-                        </property>
-                        <property key="markString" type="string" required="true">
-                            <caption>Mark string</caption>
-                            <description>Text to be displayed at mark</description>
-                        </property>
-                    </propertyGroup>
-                </properties>
-            </property> -->

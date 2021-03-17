@@ -38,7 +38,12 @@ export default class Slider extends Component {
             onChangeAction.execute();
         }
     };
-
+   /**
+     * This function makes sure the slider cant be dragged over the min or max values
+     * @param {*} min The min value of the slider
+     * @param {*} max The max value of the slider
+     * @param {*} value The current value of the slider
+     */
     convertValue(min, max, value) {
         if (value < min) {
             value = min;
