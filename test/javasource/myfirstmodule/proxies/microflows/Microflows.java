@@ -28,12 +28,12 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
-	public static myfirstmodule.proxies.Slider dS_CreateTestObject_Disabled(IContext context)
+	public static myfirstmodule.proxies.Slider dS_CreateTestObject_NotDisabled(IContext context)
 	{
 		try
 		{
 			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
-			IMendixObject result = (IMendixObject)Core.execute(context, "MyFirstModule.DS_CreateTestObject_Disabled", params);
+			IMendixObject result = (IMendixObject)Core.execute(context, "MyFirstModule.DS_CreateTestObject_NotDisabled", params);
 			return result == null ? null : myfirstmodule.proxies.Slider.initialize(context, result);
 		}
 		catch (CoreException e)
@@ -41,12 +41,12 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
-	public static myfirstmodule.proxies.Slider dS_CreateTestObject_NotDisabled(IContext context)
+	public static myfirstmodule.proxies.Slider dS_CreateTestObject_TestEmpty(IContext context)
 	{
 		try
 		{
 			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
-			IMendixObject result = (IMendixObject)Core.execute(context, "MyFirstModule.DS_CreateTestObject_NotDisabled", params);
+			IMendixObject result = (IMendixObject)Core.execute(context, "MyFirstModule.DS_CreateTestObject_TestEmpty", params);
 			return result == null ? null : myfirstmodule.proxies.Slider.initialize(context, result);
 		}
 		catch (CoreException e)

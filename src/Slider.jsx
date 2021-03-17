@@ -97,7 +97,7 @@ export default class Slider extends Component {
         }
 
         if (this.state.value === undefined) {
-            return "lallaala";
+            return "";
         }
 
         if (this.props.isVertical) {

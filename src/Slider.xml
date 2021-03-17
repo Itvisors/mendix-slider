@@ -32,7 +32,7 @@
 
             <property key="stepNr" type="expression" required = "true" defaultValue="1">
                 <caption>Step number</caption>
-                <description>Indicates the interval between steps</description>
+                <description>Indicates the interval between steps. Please ensure a value greater than 0 is filled in.</description>
                 <returnType type="Decimal" />
             </property>
 
@@ -54,7 +54,7 @@
             </property> 
 
             <property key = "valueLabelDisplayType" type = "enumeration" defaultValue="auto" required = "true"> 
-                <caption>Show label</caption>
+                <caption>Show value label</caption>
                 <description>Enumeration to determine how the label will be shown. </description>
                     <enumerationValues>
                         <enumerationValue key="on">On</enumerationValue>
