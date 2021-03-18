@@ -1,4 +1,4 @@
-## Slider
+# Slider
 A dynamic slider that has several features implemented in it. This documentation describes these features and how to setup the slider.
 
 ## Domain Model
@@ -14,9 +14,9 @@ A single slider is supported by the widget and can be used by configuring the at
 A range slider is supported by the widget by configuring the attribute and second attribute field. When the first value is dragged over the second value the first value will become the second value.
 ### Steps
 Customs steps are supported and can be filled in. This can be an integer as well as a decimal. Please ensure a value greater then 0 is filled in.
-#### Continuous Slider
+#### Discrete Slider
 A continuous slider is supported by the widget by setting the steps to a value greater then 1. If for example a step of 3 is filled in when dragging the slider it will 'click' per 3 steps.
-#### Discrete slider
+#### Continuous Slider
 A discrete slider is supported by the widget by setting the steps to the value 1. This means the slider will drag in a discrete flow.
 ### Min Value
 The min value were the slider can start. Can be an integer or decimal
@@ -36,3 +36,10 @@ Determines if the widget is visible or not
 Determines if the label will be visible or not
 #### OnChange
 An onchange microflow can be linked to the widget which gets kicked off after the widget gets dragged.
+
+## Setup
+Select an attribute to link to the slider.
+If you want a range slider connect a second attribute to the slider
+If you want a discrete slider make sure the steps are set to 1. If you want to use a continuous slider please ensure the steps are set to a value other then 1 and greater then 0.
+Fill in a min and max value.
+
