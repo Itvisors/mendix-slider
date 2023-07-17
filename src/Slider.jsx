@@ -7,9 +7,15 @@ export default class Slider extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            value: undefined
-        };
+        if (!props.secondValueAttribute) {
+            this.state = {
+                value: props.valueAttribute.value
+            };
+        } else {
+            this.state = {
+              value: [props.valueAttribute.value, props.secondValueAttribute.value]
+            };
+        }
 
         this.onInputChange = this.handleChange.bind(this);
         this.onCommitChange = this.handleChangeCommited.bind(this);
